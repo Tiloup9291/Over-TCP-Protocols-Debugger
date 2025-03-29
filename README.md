@@ -18,6 +18,27 @@ Here how to build main.c with gcc (developped with gcc v14.1.1):
 gcc -Wall -flto -O2 -Wextra -Wall -Wpedantic -D_FORTIFY_SOURCE=2 -fdata-sections -ffunction-sections -Wl,-z,relro,-z,now -fsanitize=address -fPIE -pie -fstack-protector-strong -fcf-protection=full -mshstk  -c /path/to/main.c -o path/to/store/main.o
 gcc  -o path/to/store/Listener path/to/get/main.o  -O2 -flto -s
 ```
+Alternately, you can use the Makefile. Here are the available flags and their initial value :
+```
+CC=gcc
+CFLAGS=-O2 -flto -s
+LDFLAGS=-Wall -flto -O2 -Wextra -Wall -Wpedantic -D_FORTIFY_SOURCE=2 -fdata-sections -ffunction-sections -Wl,-z,relro,-z,now -fsanitize=address -fPIE -pie -fstack-protector-strong -fcf-protection=full -mshstk
+PREFIX = /usr
+EXEC_PREFIX = $(PREFIX)
+BINDIR = $(EXEC_PREFIX)/bin
+```
+To build the object file and executable :
+```
+make or make all or make build or make Listener
+```
+To install (copy) the executable in a common binaries folder :
+```
+make install
+```
+To remove the object file :
+```
+make clean
+```
 
 ## Usage
 
