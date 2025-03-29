@@ -5,7 +5,7 @@ The executable Listener of Over-TCP Protocols Debugger is a process server that 
 The Listener will output data receive through the sockets stripped from the bottom OSI layer header to STDOUT.
 The Listener can also take input from STDIN to send it to the open client socket.
 The executable gives you the possibility to bind to an IPv4 or IPv6 address, if none is specify, it will bind to ANY.
-You can also specify the port you wist to connect the process.
+You can also specify the port you wish to connect the process.
 You have access to an help option and a usage option.
 Finally, you can output the license.
 
